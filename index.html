@@ -1,141 +1,276 @@
-
 <!doctype html>
-<html lang="es">
+<html lang="es" dir="ltr" data-theme="turquesa">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Invitación | Boda de José & Melissa</title>
   <meta name="description" content="Acompáñanos a celebrar nuestra boda. Con todo nuestro amor, José & Melissa. 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
+  <meta name="theme-color" content="#12c6d8" />
 
-  <!-- Tipografías (Google Fonts) -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- OG / Twitter -->
+  <meta property="og:type" content="event" />
+  <meta property="og:title" content="Boda de José & Melissa" />
+  <meta property="og:description" content="Sábado 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
+  <meta property="og:image" content="portada.jpg" />
+  <meta property="og:locale" content="es_SV" />
+  <meta property="og:site_name" content="Invitación de boda" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Boda de José & Melissa" />
+  <meta name="twitter:description" content="Acompáñanos a celebrar nuestra boda en el Lago de Coatepeque" />
+  <meta name="twitter:image" content="portada.jpg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Boda de José y Melissa",
+    "startDate": "2026-02-14T16:30:00-06:00",
+    "endDate": "2026-02-14T22:00:00-06:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Palo Alto Lakehouse",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lago de Coatepeque",
+        "addressRegion": "Santa Ana",
+        "addressCountry": "SV"
+      }
+    },
+    "image": ["portada.jpg"],
+    "description": "Ceremonia y recepción en el mismo lugar. Celebración solo para adultos.",
+    "organizer": { "@type": "Person", "name": "José & Melissa" }
+  }
+  </script>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
+    /* ========= BASE ========= */
     :root{
-      --bg: #f9f7f4;
-      --paper: #ffffff;
-      --ink: #2b2b2b;
-      --muted: #6b6b6b;
-      --primary: #7b5cfa; /* Lila elegante */
-      --accent: #c8b7ff;
-      --gold: #bba36a;
-      --danger: #b00020;
       --radius: 16px;
       --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --ease: cubic-bezier(.22,.61,.36,1);
+      --ink: #203238;
+      --muted: #566a71;
+      --paper: #ffffff;
+    }
+
+    /* ========= TEMA TURQUESA+ ========= */
+    html[data-theme="turquesa"]{
+      --bg: #f2fbfd;                 /* cielo agua claro */
+      --primary: #12c6d8;            /* turquesa */
+      --primary-600: #0daabd;        /* turquesa profundo */
+      --primary-700: #0a8fa1;        /* más contraste en hover y detalles */
+      --accent: #cfeff5;             /* agua clarita */
+      --accent-2: #e6f8fb;           /* fondo chips/realces */
+      --hero-overlay: linear-gradient(to bottom, rgba(18,198,216,.28), rgba(9,120,150,.10));
+      --glow: rgba(18,198,216,.22);
+      --seal-ink: #0d6d7a;
+      --gold: #d0b87a;
+      --wave: #bfeaf0;
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
     img{max-width:100%;display:block}
-    a{color:var(--primary);text-decoration:none}
-    a:hover{opacity:.9}
+    a{color:var(--primary-700);text-decoration:none}
+    a:hover{opacity:.96}
     .container{max-width:960px;margin:auto;padding:24px}
+    main{display:block}
 
-    /* Tarjeta principal */
+    /* Tarjeta */
     .card{
       background:var(--paper);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       overflow:hidden;
-      border:1px solid #f0ece6;
+      border:1px solid rgba(0,0,0,.05);
     }
 
     /* Portada */
     .hero{
-      position:relative;
-      min-height: 60vh;
-      display:grid;
-      place-items:center;
+      position:relative; min-height:60vh;
+      display:grid; place-items:center;
       padding:48px 24px;
-      background:
-        linear-gradient(to bottom, rgba(129, 101, 240, 0.35), rgba(78, 48, 199, 0.05)),
-        url('portada.jpg') center/cover no-repeat; /* <-- Cambia por tu imagen */
-      color:rgb(7, 7, 7);
-      text-align:center;
+      background: var(--hero-overlay), url('portada.jpg') center/cover no-repeat;
+      color:#0b1012; text-align:center; will-change: background-position; isolation:isolate;
     }
     .hero::after{
-      content:"";
-      position:absolute;inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35));
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.26));
+      pointer-events:none; z-index:0;
     }
-    .hero-content{position:relative;z-index:1;max-width:800px}
+    .hero-content{position:relative; z-index:1; max-width:800px; animation: heroIn .9s var(--ease) both .15s}
+    @keyframes heroIn{ from{opacity:0; transform: translateY(16px) scale(.985); filter: blur(4px)} to{opacity:1; transform:none; filter: none} }
+
     .badge{
-      display:inline-block;
-      background:rgba(255,255,255,.2);
-      border:1px solid rgba(255,255,255,.35);
-      padding:6px 12px;border-radius:999px;
-      letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;
-      margin-bottom:16px;backdrop-filter: blur(6px);
-      color:#fff;
+      display:inline-block; background:rgba(255,255,255,.26);
+      border:1px solid rgba(255,255,255,.42);
+      padding:6px 12px; border-radius:999px;
+      letter-spacing:.16em; text-transform:uppercase; font-size:.78rem;
+      margin-bottom:16px; backdrop-filter: blur(6px);
+      color:#fff; box-shadow: 0 4px 18px rgba(0,0,0,.12) inset;
     }
+
     .names{
-      font-family:"Playfair Display",serif;
-      font-size: clamp(32px, 6vw, 64px);
-      line-height:1.1;margin:10px 0 6px;
-      color:#fff;
-      text-shadow: 0 2px 12px rgba(0,0,0,.25);
+      font-family:"Cormorant Garamond",serif; font-weight:500;
+      font-size: clamp(38px, 6vw, 72px); letter-spacing: .12em; text-transform: uppercase;
+      line-height:1.05; color:#ffffff; text-shadow: 0 2px 12px rgba(0,0,0,.25);
+      position: relative; margin:10px 0 6px;
     }
-    .amp{color:#ffe8a3}
-    .date{font-size:1rem;opacity:.95;margin-top:6px;color:#fff}
+    .names::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0) 35%, rgba(230,255,255,.65) 50%, rgba(255,255,255,0) 65%, transparent 100%);
+      mix-blend-mode: screen; transform: translateX(-120%);
+      animation: sheen 3.6s ease-in-out infinite 1.2s; pointer-events:none;
+    }
+    @keyframes sheen{
+      0%{ transform: translateX(-120%); opacity: 0 } 20%{ opacity: 1 }
+      60%{ transform: translateX(120%); opacity: 1 } 100%{ transform: translateX(120%); opacity: 0 }
+    }
+    .amp{ font-family:"Cormorant Garamond",serif; font-style: italic; font-weight:300; margin: 0 .15em; color:#eafcff }
+    .date{ letter-spacing: .16em; text-transform: uppercase; font-size:.95rem; color:#fff; opacity:.98; margin-top:6px }
+
+    /* Onda separadora beach */
+    .wave{
+      display:block; width:100%; height:auto;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+    }
+    .wave svg{ display:block; width:100%; height:auto }
 
     /* Secciones */
     section{padding:40px 24px}
     .grid-2{display:grid;gap:24px;grid-template-columns:1fr}
     @media (min-width:820px){.grid-2{grid-template-columns:1.1fr .9fr}}
-    .panel{background:#fff;border:1px solid #eee;border-radius:14px;padding:24px}
+    .panel{
+      background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:30px 28px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.03);
+    }
     h2{
-      font-family:"Playfair Display",serif;
-      font-weight:600;font-size: clamp(22px, 3vw, 28px);margin:0 0 12px
+      font-family:"Cormorant Garamond",serif; font-weight:500; font-size:clamp(22px, 3vw, 28px);
+      margin:0 0 12px; letter-spacing:.04em; line-height:1.2; color:#1e2a30;
     }
-    .muted{color:var(--muted);line-height:1.6}
+    .kicker{
+      font-family:"Inter",sans-serif; font-size:.7rem; letter-spacing:.28em; text-transform:uppercase;
+      margin-bottom:6px; color:#7a8a93;
+    }
+    .muted, p, li{ font-size:0.98rem; font-weight:400; line-height:1.8; letter-spacing:.015em; color:var(--muted) }
+    .panel p + p, .panel ul + p{ margin-top:14px }
 
-    /* Contador */
-    .countdown{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    /* Realces turquesa */
+    .highlight{
+      background: var(--accent-2);
+      border-left: 4px solid var(--primary);
+      padding: 10px 12px; border-radius: 10px;
+      box-shadow: inset 0 0 0 1px rgba(18,198,216,.08);
+    }
+
+    /* Contador con más turquesa */
+    .countdown{
+      display:grid; gap:10px; justify-content:center; align-items:stretch;
+      grid-template-columns: repeat(4, minmax(78px, 1fr));
+      max-width: 640px; margin:18px auto 0;
+    }
     .time-box{
-      background:#ffffffd9;border:1px solid #ffffff;
-      padding:12px 14px;border-radius:12px;text-align:center;min-width:82px
+      background:#ffffffee;
+      border:1px solid color-mix(in oklab, var(--primary) 35%, #fff);
+      border-radius:12px; text-align:center; padding:12px 14px;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease); will-change: transform; perspective:600px;
+      box-shadow: 0 6px 18px var(--glow);
     }
-    .time-box b{display:block;font-size:22px}
-    .time-box span{font-size:12px;color:var(--muted)}
+    .time-box b{
+      display:block; font-size: clamp(22px, 5.5vw, 28px);
+      font-variant-numeric: tabular-nums; color:#16363d; line-height:1.1; transform-style: preserve-3d;
+    }
+    .time-box span{
+      display:block; font-size:12px; color:var(--primary-700); margin-top:6px;
+      letter-spacing:.12em; text-transform:uppercase;
+    }
+    .time-box.flip b{ animation: flip .6s var(--ease) both }
+    @keyframes flip{
+      0%{ transform: rotateX(0) translateZ(0) }
+      45%{ transform: rotateX(-90deg) translateZ(1px); opacity:.85 }
+      55%{ transform: rotateX(90deg) translateZ(1px); opacity:.85 }
+      100%{ transform: rotateX(0) translateZ(0) }
+    }
+    @media (max-width: 520px){
+      .countdown{ grid-template-columns: repeat(2, minmax(120px,1fr)); gap: 12px; max-width: 380px }
+      .time-box{ padding:12px 14px }
+      .time-box b{ font-size: clamp(24px, 8vw, 32px) }
+      .time-box span{ font-size:11px; margin-top:6px }
+    }
 
-    /* Botones */
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    /* Botones (turquesa+) */
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px; justify-content:center}
     .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:12px 16px;border-radius:12px;font-weight:600;border:1px solid transparent;
-      transition:.2s;cursor:pointer
+      display:inline-flex;align-items:center;gap:8px; padding:12px 16px; border-radius:12px; font-weight:600;
+      border:1px solid color-mix(in oklab, var(--primary) 45%, #fff);
+      background: linear-gradient(180deg,#fff 0%, color-mix(in oklab, var(--accent) 60%, #fff) 100%);
+      color:#0f2f35; cursor:pointer; position:relative; transition: transform .2s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+      isolation:isolate;
     }
-    .btn-primary{background:var(--primary);color:#fff}
-    .btn-outline{background:#fff;border-color:#e5e2ff;color:var(--primary)}
-    .btn-ghost{background:transparent;border-color:#ddd;color:var(--ink)}
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px var(--glow) }
+    .btn::after{
+      content:""; position:absolute; inset:-2px;
+      background: radial-gradient(120px 60px at var(--mx,50%) 120%, var(--glow), transparent 60%);
+      opacity:0; transition: opacity .25s var(--ease); z-index:-1; border-radius: inherit;
+    }
+    .btn:hover::after{ opacity:1 }
 
     /* Lista eventos */
-    .event{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed #eee}
+    .event{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed color-mix(in oklab, var(--primary) 22%, #e9f4f6)}
     .event:last-child{border-bottom:none}
-    .event .dot{width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--accent)}
-    .event h3{margin:0;font-size:18px}
+    .event .dot{width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--primary)}
+    .event h3{margin:0;font-size:18px;color:#1e2a30}
     .event .meta{font-size:.95rem;color:var(--muted)}
 
     /* Galería */
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
     @media (min-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}}
-    .gallery img{border-radius:12px;aspect-ratio:1/1;object-fit:cover}
+    .gallery img{
+      border-radius:12px;aspect-ratio:1/1;object-fit:cover; transition: transform .4s var(--ease), box-shadow .4s var(--ease), filter .3s var(--ease)
+    }
+    .gallery img:hover{ transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 24px rgba(0,0,0,.08); filter: saturate(1.05) }
+    .chip{
+      display:inline-block; padding:6px 10px; border-radius:999px; font-size:.8rem; color:#0d2f35;
+      background: var(--accent-2); border:1px solid color-mix(in oklab, var(--primary) 30%, #fff);
+    }
 
-    /* Footer */
+    /* Footer y sello */
     .footer{text-align:center;color:var(--muted);font-size:.9rem;padding:22px}
-
-    /* Detalles finos */
     .seal{
       display:inline-flex;align-items:center;gap:8px;
-      background:linear-gradient(135deg,#fff 0%, #fbf9ff 100%);
-      border:1px solid #efeafc;padding:10px 14px;border-radius:12px;margin-top:8px;color:#6a54c6
+      background:linear-gradient(135deg,#fff 0%, color-mix(in oklab, var(--accent) 65%, #fff) 100%);
+      border:1px solid color-mix(in oklab, var(--accent) 70%, #fff);
+      padding:10px 14px;border-radius:12px;margin-top:8px;color:var(--seal-ink);
+      box-shadow: 0 6px 20px var(--glow);
     }
-    .kicker{letter-spacing:.18em;text-transform:uppercase;color:#7d7d7d;font-size:.78rem}
 
-    /* Animación */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-    .fade{animation:fadeUp .6s ease both}
+    /* Aparición y parallax */
+    .fade{opacity:0; transform: translateY(12px); filter: blur(2px)}
+    .fade.is-visible{ animation: fadeUp .6s var(--ease) both }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px);filter: blur(2px)}to{opacity:1;transform:none;filter: blur(0)}}
+    .hero.parallax{ background-position: center calc(50% + var(--parallax,0px)) }
+
+    /* Accesibilidad: reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation: none !important; transition: none !important; scroll-behavior: auto !important}
+      .fade{opacity:1; transform:none; filter:none}
+      .hero.parallax{ background-position: center center !important }
+    }
   </style>
 </head>
 <body>
@@ -143,126 +278,138 @@
     <div class="card">
 
       <!-- PORTADA -->
-      <header class="hero" role="banner" aria-label="Invitación de boda">
-        <div class="hero-content fade">
-          <span class="badge">Con todo nuestro amor</span>
+      <header class="hero parallax" role="banner" aria-label="Invitación de boda">
+        <div class="hero-content">
+          <span class="badge">Estás cordialmente invitado(a) a nuestra boda.</span>
 
           <h1 class="names">
-            José <span class="amp">&amp;</span> Melissa
+            José <span class="amp">&</span> Melissa
           </h1>
 
-          <div class="date">Sábado, 14 de febrero de 2026 · 4:30 p. m.</div>
+          <p class="date" aria-label="Fecha y hora del evento">
+            Sábado, 14 de febrero de 2026 · 4:30 p. m.
+          </p>
 
-          <div class="countdown" id="countdown" aria-label="Cuenta regresiva"></div>
+          <!-- CONTADOR -->
+          <div class="countdown" id="countdown" aria-live="polite" aria-label="Cuenta regresiva"></div>
 
-          <div class="actions" style="justify-content:center;margin-top:18px">
-            <!-- WhatsApp RSVP: EDITAR número y mensaje -->
-            <a class="btn btn-outline" href="https://wa.me/50379144383?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20José%20y%20Melissa.%20Mi%20nombre%20es%3A" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">
-              ✅ Confirmar asistencia (RSVP)
+          <nav class="actions" aria-label="Acciones rápidas" style="margin-top:18px">
+            <!-- WhatsApp RSVP -->
+            <a class="btn" href="https://wa.me/50379144383?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20José%20y%20Melissa.%20Mi%20nombre%20es%3A" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">
+              ✅ Confirmar asistencia
             </a>
-            <!-- Google Calendar (UTC correcto para 14 feb 2026 16:30–22:00 hora local UTC-6) -->
-            <a class="btn btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20José%20y%20Melissa&dates=20260214T223000Z/20260215T040000Z&location=Lago%20de%20Coatepeque%2C%20Santa%20Ana%20Department%2C%20El%20Salvador&details=Ceremonia%20y%20recepción%20en%20el%20mismo%20lugar.%20Waze%3A%20https%3A%2F%2Fwaze.com%2Ful%2Fhd42r48sec" target="_blank" rel="noopener" aria-label="Agregar al calendario">
+            <!-- Google Calendar -->
+            <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20José%20y%20Melissa&dates=20260214T223000Z/20260215T040000Z&location=Lago%20de%20Coatepeque%2C%20Santa%20Ana%20Department%2C%20El%20Salvador&details=Ceremonia%20y%20recepción%20en%20el%20mismo%20lugar.%20Waze%3A%20https%3A%2F%2Fwaze.com%2Ful%2Fhd42r48sec" target="_blank" rel="noopener" aria-label="Agregar al calendario">
               📅 Agregar al calendario
             </a>
             <!-- Waze -->
-            <a class="btn btn-outline" href="https://waze.com/ul/hd42r48sec" target="_blank" rel="noopener" aria-label="Abrir ubicación en Waze">
+            <a class="btn" href="https://waze.com/ul/hd42r48sec" target="_blank" rel="noopener" aria-label="Abrir ubicación en Waze">
               🚗 Abrir en Waze
             </a>
-          </div>
+          </nav>
 
-          <div class="seal" aria-label="Verso bíblico">Salmo 107:1 · “Porque eterno es su amor”</div>
+          <div class="seal" aria-label="Verso bíblico"><b>Marcos 10:9</b> · Por tanto, lo que Dios ha unido, que no lo separe el hombre.</div>
         </div>
       </header>
 
+      <!-- ONDA BEACH -->
+      <div class="wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path fill="var(--wave)" d="M0,64 C240,96 360,0 720,48 C1080,96 1200,24 1440,64 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+
       <!-- CUERPO -->
-      <section class="grid-2" aria-label="Detalles del evento">
-        <div class="panel fade">
-          <div class="kicker">Detalles</div>
-          <h2>Celebración</h2>
+      <main>
+        <section class="grid-2" aria-label="Detalles del evento">
+          <div class="panel fade">
+            <div class="kicker">Detalles</div>
+            <h2>Celebración</h2>
 
-          <!-- Mensaje romántico -->
-          <p class="muted">
-            Con el corazón lleno de amor y gratitud, queremos compartir contigo el comienzo
-            de una nueva etapa en nuestras vidas. Tu presencia hará este día aún más significativo.
-          </p>
+            <p class="muted">
+              Con el corazón lleno de amor y gratitud, queremos compartir contigo el comienzo
+              de una nueva etapa en nuestras vidas. Tu presencia hará este día aún más significativo.
+            </p>
 
-          <!-- Unificado: Ceremonia & Recepción en el mismo lugar -->
-          <div class="event" aria-label="Lugar del evento">
-            <div class="dot" aria-hidden="true"></div>
-            <div>
-              <h3>Palo Alto Lakehouse</h3>
-              <div class="meta">Lago de Coatepeque</div>
-              <div class="muted">Santa Ana, El Salvador</div>
+            <article class="event" aria-label="Lugar del evento">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <h3>Palo Alto Lakehouse</h3>
+                <p class="meta">Lago de Coatepeque</p>
+                <p class="muted" style="margin: 4px 0 0">Santa Ana, El Salvador</p>
+              </div>
+            </article>
+
+            <p class="muted highlight" style="margin-top:8px">
+              Ceremonia y recepción se llevarán a cabo en el mismo lugar.
+            </p>
+
+            <div class="actions" style="margin-top:14px">
+              <a class="btn" href="mailto:joseantonzr@gmail.com?subject=RSVP%20Boda&body=Hola%2C%20confirmo%20mi%20asistencia.%20Nombre%3A%0AMensaje%3A%20" target="_blank" rel="noopener" aria-label="Confirmar asistencia por correo">
+                ✉️ Confirmar por correo
+              </a>
             </div>
           </div>
 
-          <p class="muted" style="margin-top:8px">
-            Ceremonia y recepción se llevarán a cabo en el mismo lugar.
-          </p>
+          <div class="panel fade">
+            <div class="kicker">Información útil</div>
+            <h2>Dress code · Regalos</h2>
+            <ul style="margin:0 0 6px 18px">
+              <li>Código de vestimenta: <b>Formal</b>.</li>
+              <li>Acompáñanos con tonos suaves y elegantes.</li>
+              <li>Clima agradable durante la tarde y fresco por la noche.</li>
+              <li>Celebración solo para adultos.</li>
+              <li><b>Sugerimos amablemente regalo en sobre.</b></li>
+            </ul>
 
-          <div class="actions" style="margin-top:14px">
-            <!-- mailto alternativo -->
-            <a class="btn btn-ghost" href="mailto:joseantonzr@gmail.com?subject=RSVP%20Boda&body=Hola%2C%20confirmo%20mi%20asistencia.%20Nombre%3A%0AMensaje%3A%20" target="_blank" rel="noopener" aria-label="Confirmar asistencia por correo">
-              ✉️ Confirmar por correo
-            </a>
+            <hr style="border:none;border-top:1px dashed color-mix(in oklab, var(--primary) 25%, #e7f4f6);margin:18px 0">
+
+            <div class="kicker">Notas</div>
+            <p class="muted">
+              Te esperamos con ilusión 20 minutos antes del inicio de la ceremonia.
+              Habrá estacionamiento disponible en el lugar.
+            </p>
           </div>
-        </div>
+        </section>
 
-        <div class="panel fade">
-          <div class="kicker">Información útil</div>
-          <h2>Dress code · Regalos</h2>
-          <ul style="margin:0 0 6px 18px">
-            <li>Código de vestimenta: <b>Formal</b>.</li>
-            <li>Acompáñanos con tonos suaves y elegantes.</li>
-            <li>Clima agradable durante la tarde y fresco por la noche.</li>
-            <li>Celebración solo para adultos.</li>
-          </ul>
-
-          <!-- Regalos -->
-          <p class="muted" style="margin-top:8px">
-            Tu presencia es el mejor regalo que podríamos recibir. Asimismo, queremos comentar que el regalo será en sobre.
-          </p>
-
-          <hr style="border:none;border-top:1px dashed #eee;margin:18px 0">
-
-          <div class="kicker">Notas</div>
-          <p class="muted">
-            Te esperamos con ilusión 20 minutos antes del inicio de la ceremonia.
-            Habrá estacionamiento disponible en el lugar.
-          </p>
-        </div>
-      </section>
-
-      <!-- GALERÍA (opcional) -->
-      <section class="fade" aria-label="Nuestra historia">
-        <div class="container-inner" style="max-width:900px;margin:auto">
-          <div class="kicker">Momentos</div>
-          <h2>Nuestra historia de amor</h2>
-          <div class="gallery">
-            <!-- Cambia las rutas de imagen por las tuyas -->
-            <img src="/img/Foto1.jpeg" alt="José y Melissa, momento 1">
-            <img src="/img/Foto2.jpeg" alt="José y Melissa, momento 2">
-            <img src="/img/Foto3.jpeg" alt="José y Melissa, momento 3">
-            <img src="/img/Foto4.jpg" alt="José y Melissa, momento 4">
-            <img src="/img/Foto5.jpg" alt="José y Melissa, momento 5">
-            <img src="/img/Foto6.jpg" alt="José y Melissa, momento 6">
+        <!-- GALERÍA (opcional) -->
+        <section class="fade" aria-label="Nuestra historia">
+          <div class="container-inner" style="max-width:900px;margin:auto">
+            <div class="kicker">Momentos</div>
+            <h2>Nuestra historia de amor</h2>
+            <div class="gallery" role="list" aria-label="Galería de fotos">
+              <img src="/img/Foto1.jpeg" alt="José y Melissa, momento 1" loading="lazy" decoding="async">
+              <img src="/img/Foto2.jpeg" alt="José y Melissa, momento 2" loading="lazy" decoding="async">
+              <img src="/img/Foto3.jpeg" alt="José y Melissa, momento 3" loading="lazy" decoding="async">
+              <img src="/img/Foto4.jpg"  alt="José y Melissa, momento 4" loading="lazy" decoding="async">
+              <img src="/img/Foto5.jpg"  alt="José y Melissa, momento 5" loading="lazy" decoding="async">
+              <img src="/img/Foto6.jpg"  alt="José y Melissa, momento 6" loading="lazy" decoding="async">
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <footer class="footer">
-        Con todo nuestro amor, José &amp; Melissa · <span id="year"></span>
+      <footer class="footer" role="contentinfo">
+        Con todo nuestro amor, José & Melissa 💙 · <span id="year"></span>
       </footer>
     </div>
   </div>
 
   <script>
     // === FECHA DEL EVENTO ===
-    // año, mes-1, día, hora, minuto (mes empieza en 0)
-    const eventDate = new Date(2026, 1, 14, 16, 30); // 14 feb 2026, 4:30 p. m.
-
+    const eventDate = new Date(2026, 1, 14, 16, 30); // 14 feb 2026, 4:30 p. m. (hora local)
     const cd = document.getElementById('countdown');
     const pad = n => String(n).padStart(2,'0');
+    const prev = { d:null, h:null, m:null, s:null };
+
+    function timeBox(label, value, changed){
+      return `
+        <div class="time-box ${changed ? 'flip' : ''}">
+          <b aria-label="${value} ${label.toLowerCase()}">${pad(value)}</b>
+          <span>${label}</span>
+        </div>
+      `;
+    }
 
     function renderCountdown(){
       const now = new Date();
@@ -270,6 +417,7 @@
 
       if(diff <= 0){
         cd.innerHTML = '<div class="time-box"><b>¡Hoy!</b><span>Es el gran día</span></div>';
+        clearInterval(timer);
         return;
       }
       const d = Math.floor(diff / (1000*60*60*24));
@@ -277,17 +425,68 @@
       const m = Math.floor((diff / (1000*60)) % 60);
       const s = Math.floor((diff / 1000) % 60);
 
+      const changed = { d: prev.d !== d, h: prev.h !== h, m: prev.m !== m, s: prev.s !== s };
+
       cd.innerHTML = `
-        <div class="time-box"><b>${pad(d)}</b><span>Días</span></div>
-        <div class="time-box"><b>${pad(h)}</b><span>Horas</span></div>
-        <div class="time-box"><b>${pad(m)}</b><span>Min</span></div>
-        <div class="time-box"><b>${pad(s)}</b><span>Seg</span></div>
+        ${timeBox('Días', d, changed.d)}
+        ${timeBox('Horas', h, changed.h)}
+        ${timeBox('Min', m, changed.m)}
+        ${timeBox('Seg', s, changed.s)}
       `;
+
+      prev.d = d; prev.h = h; prev.m = m; prev.s = s;
     }
     renderCountdown();
-    setInterval(renderCountdown, 1000);
+    const timer = setInterval(renderCountdown, 1000);
 
+    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!prefersReduced && 'IntersectionObserver' in window){
+      const els = document.querySelectorAll('.fade');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting){
+            const i = [...els].indexOf(entry.target);
+            entry.target.style.animationDelay = (0.05 * i) + 's';
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.12});
+      document.querySelectorAll('.fade').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.fade').forEach(el=>{
+        el.classList.add('is-visible');
+      });
+    }
+
+    // Parallax sutil
+    const hero = document.querySelector('.hero.parallax');
+    if(hero && !prefersReduced){
+      const onScroll = () => {
+        const rect = hero.getBoundingClientRect();
+        const winH = window.innerHeight || document.documentElement.clientHeight;
+        if(rect.bottom >= 0 && rect.top <= winH){
+          const mid = rect.top + rect.height/2 - winH/2;
+          const offset = Math.max(-20, Math.min(20, mid * -0.05));
+          hero.style.setProperty('--parallax', offset.toFixed(1) + 'px');
+        }
+      };
+      onScroll();
+      document.addEventListener('scroll', onScroll, {passive:true});
+    }
+
+    // Halo hover
+    document.querySelectorAll('.btn').forEach(btn=>{
+      btn.addEventListener('pointermove', (e)=>{
+        const rect = btn.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        btn.style.setProperty('--mx', mx + 'px');
+      });
+    });
   </script>
 </body>
 </html>
