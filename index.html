@@ -1,445 +1,293 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="estilo.css">
-        <!--ESTILO SACADO DE CNDJS AWESOME-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>Portafolio</title>
-    </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invitación | Boda de José & Melissa</title>
+  <meta name="description" content="Acompáñanos a celebrar nuestra boda. Con todo nuestro amor, José & Melissa. 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
 
-    <body>
-        <!-- SECCION ENCABEZADO -->
-        <div class="contenedor-header">
-            <header>
-                <div class="logo">
-                    <a href="#">JZ</a>
-                </div>
-                <nav id="nav">
-                    <ul>
-                        <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
-                        <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
-                        <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-                        <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                        <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
-                        <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
-                    </ul>
-                </nav>
-                <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </header>
-        </div>
+  <!-- Tipografías (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        <!-- SECCION INICIO -->
-        <section id="inicio" class="inicio">
-            <div class="contenido-banner">
-                <div class="contenido-img">
-                    <img src="img/FotoJZ.JPG" alt="">
-                </div>
-                <h1>José Zepeda</h1>
-                <h2>Ingeniero en sistemas - Programador y analista de datos.</h2>
-                
-                <!-- PROXIMAMENTE
-                <div class="redes">
-                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-brands fa-skype"></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <a href=""><i class="fa-solid fa-rss"></i></a>
-                </div
-                -->
-                
-            </div>
-        </section>
+  <style>
+    :root{
+      --bg: #f9f7f4;
+      --paper: #ffffff;
+      --ink: #2b2b2b;
+      --muted: #6b6b6b;
+      --primary: #7b5cfa; /* Lila elegante */
+      --accent: #c8b7ff;
+      --gold: #bba36a;
+      --danger: #b00020;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
 
-        <!-- SECCION SOBRE MI -->
-        <section id="sobremi" class="sobremi">
-            <div class="contenido-seccion">
-                <h2>Sobre Mi</h2>
-                <p><span>Hola, Jose Zepeda</span> 
-                    Programador web con experiencia en creación de sitios
-                    web, programas de escritorio, gestión de bases de
-                    datos, con interés en el aprendizaje de nuevas
-                    tecnologías.</p>
-                
-                <div class="fila">
-                    <!--DATOS PERSONALES-->
-                    <div class="col">
-                        <h3>Datos personales</h3>
-                        <ul>
-                            <li>
-                                <strong>Cumpleaños</strong>
-                                11/04/1997
-                            </li>
-                            <li>
-                                <strong>Teléfono</strong>
-                                7914-4383
-                            </li>
-                            <li>
-                                <strong>Email</strong>
-                                joseantonzr@gmail.com
-                            </li>
-                            <li>
-                                <strong>Cargo</strong>
-                                Programador y analista de datos
-                            </li>
-                        </ul>
-                    </div>
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    img{max-width:100%;display:block}
+    a{color:var(--primary);text-decoration:none}
+    a:hover{opacity:.9}
+    .container{max-width:960px;margin:auto;padding:24px}
 
-                    <!--INTERESES-->
-                    <div class="col">
-                        <h3>Intereses</h3>
-                        <div class="contenedor-intereses">
-                            <div class="interes">
-                                <i class="fa-solid fa-gamepad"></i>
-                                <span>JUEGOS</span>
-                            </div>
-                            <div class="interes">
-                                <i class="fa-solid fa-headphones"></i>
-                                <span>MUSICA</span>
-                            </div>
-                            <div class="interes">
-                                <i class="fa-solid fa-plane"></i>
-                                <span>VIAJAR</span>
-                            </div>
-                            <div class="interes">
-                                <i class="fa-brands fa-apple"></i>
-                                <span>MAC OS</span>
-                            </div>
-                            <div class="interes">
-                                <i class="fa-solid fa-person-hiking"></i>
-                                <span>DEPORTES</span>
-                            </div>
-                            <div class="interes">
-                                <i class="fa-solid fa-book"></i>
-                                <span>LIBROS</span>
-                            </div>
-                            <div class="interes">
-                                <i class="fa-solid fa-car"></i>
-                                <span>AUTOS</span>
-                            </div>
-                            <div class="interes">
-                                <i class="fa-solid fa-camera"></i>
-                                <span>FOTOS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button>
-                    <a download="CV José Zepeda" href="CV/CV José Zepeda.pdf">
-                    Descargar CV <i class="fa-solid fa-download"></i>
-                    <span class="overlay"></span>
-                    </a>
-                </button>
-            </div>
-        </section>
+    /* Tarjeta principal */
+    .card{
+      background:var(--paper);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      border:1px solid #f0ece6;
+    }
 
-        <!--SECCION SKILLS-->
-        <section class="skills" id="skills">
-            <div class="contenido-seccion">
-                <h2>Skills</h2>
-                <div class="fila">
-                    <!--Technical Skill-->
-                    <div class="col">
-                            <h3>Technical Skills</h3>
-                            <div class="skill">
-                                <span>JavaScript</span>
-                                <div class="barra-skill">
-                                    <div class="progreso">
-                                        <span>70%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill">
-                                <span>HTML & CSS</span>
-                                <div class="barra-skill">
-                                    <div class="progreso">
-                                        <span>85%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill">
-                                <span>Photoshop</span>
-                                <div class="barra-skill">
-                                    <div class="progreso">
-                                        <span>80%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill">
-                                <span>WordPress</span>
-                                <div class="barra-skill">
-                                    <div class="progreso">
-                                        <span>75%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill">
-                                <span>Desarrollador .NET</span>
-                                <div class="barra-skill">
-                                    <div class="progreso">
-                                        <span>85%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill">
-                                <span>Power BI</span>
-                                <div class="barra-skill">
-                                    <div class="progreso">
-                                        <span>85%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill">
-                                <span>Base de datos</span>
-                                <div class="barra-skill">
-                                    <div class="progreso">
-                                        <span>90%</span>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    <!--Professional Skills-->
-                    <div class="col">
-                        <h3>Professional Skills</h3>
-                        <div class="skill">
-                            <span>Comunicación</span>
-                            <div class="barra-skill">
-                                <div class="progreso">
-                                    <span>70%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>Trabajo en equipo</span>
-                            <div class="barra-skill">
-                                <div class="progreso">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>Creatividad</span>
-                            <div class="barra-skill">
-                                <div class="progreso">
-                                    <span>80%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>Dedicación</span>
-                            <div class="barra-skill">
-                                <div class="progreso">
-                                    <span>75%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>Proyect Management</span>
-                            <div class="barra-skill">
-                                <div class="progreso">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>Compromiso</span>
-                            <div class="barra-skill">
-                                <div class="progreso">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>Fortaleza</span>
-                            <div class="barra-skill">
-                                <div class="progreso">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                        </div>                      
-                </div>
-                </div>
-            </div>
-        </section>
+    /* Portada */
+    .hero{
+      position:relative;
+      min-height: 60vh;
+      display:grid;
+      place-items:center;
+      padding:48px 24px;
+      background:
+        linear-gradient(to bottom, rgba(129, 101, 240, 0.35), rgba(78, 48, 199, 0.05)),
+        url('portada.jpg') center/cover no-repeat; /* <-- Cambia por tu imagen */
+      color:rgb(7, 7, 7);
+      text-align:center;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35));
+    }
+    .hero-content{position:relative;z-index:1;max-width:800px}
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.2);
+      border:1px solid rgba(255,255,255,.35);
+      padding:6px 12px;border-radius:999px;
+      letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;
+      margin-bottom:16px;backdrop-filter: blur(6px);
+      color:#fff;
+    }
+    .names{
+      font-family:"Playfair Display",serif;
+      font-size: clamp(32px, 6vw, 64px);
+      line-height:1.1;margin:10px 0 6px;
+      color:#fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .amp{color:#ffe8a3}
+    .date{font-size:1rem;opacity:.95;margin-top:6px;color:#fff}
 
-        <!-- SECCION CURRICULUM -->
-        <section id="curriculum" class="curriculum">
-        <div class="contenido-seccion">
-            <h2>Curriculum</h2>
-            <div class="fila">
-                <div class="col izquierda">
-                    <h3>Educación</h3>
-                    <div class="item izq">
-                        <h4>Ingles</h4>
-                        <span class="casa">Escuela Americana de El Salvador</span>
-                        <span class="fecha">2018 - 2019</span>
-                        <p>Curso intensivo del lenguaje, para certificación y mayor aprendizaje.</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Ingenieria en sistemas</h4>
-                        <span class="casa">Universidad tecnologica de El Salvador</span>
-                        <span class="fecha">2018 - 2024</span>
-                        <p>Me encuentro en mi último año de carrera de la universidad
-                        cursando mis 2 ultimas materias del ciclo de manera virtual, para luego egresar y
-                        principio de año de 2024 graduarme.</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Multimedia</h4>
-                        <span class="casa">Cursos varios</span>
-                        <span class="fecha">2018 - Actualidad</span>
-                        <p>Actualmente sigo alimentando mis habilidad tanto de programacion como de diseño web con el fin de hacer la entrega de un buen trabajo, 
-                        segun las exigencias que se piden. Estos son algunos de ellos: JavaScript, CSS, Bootstrap, .Net, ,Php, Photoshop, Java, Sql Oracle y server, Power BI, 
-                        Excel entre otros.</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                </div>
+    /* Secciones */
+    section{padding:40px 24px}
+    .grid-2{display:grid;gap:24px;grid-template-columns:1fr}
+    @media (min-width:820px){.grid-2{grid-template-columns:1.1fr .9fr}}
+    .panel{background:#fff;border:1px solid #eee;border-radius:14px;padding:24px}
+    h2{
+      font-family:"Playfair Display",serif;
+      font-weight:600;font-size: clamp(22px, 3vw, 28px);margin:0 0 12px
+    }
+    .muted{color:var(--muted);line-height:1.6}
 
-                <div class="col derecha">
-                    <h3>Experiencia de trabajo</h3>
-                    <div class="item der">
-                        <h4>Freelancer</h4>
-                        <span class="casa">Freelancer</span>
-                        <span class="fecha">2018 - Actulidad</span>
-                        <p>Brindo mis servicios como freelancer segun las exigencias de los proyectos.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Analista Programador</h4>
-                        <span class="casa">Tigo</span>
-                        <span class="fecha">2022 - Actualidad</span>
-                        <p>Administrador de bases de datos y encargado de generar reportes para análisis
-                            de datos del área logística de tigo, haciendo uso las tecnologías de base de
-                            datos de oracle developer y Excel para la entrega de proyectos en
-                            específicos y acuerdo a las necesidades del sector del área de logística.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Instructor de programación</h4>
-                        <span class="casa">Universidad Tecnologica de El Salvador</span>
-                        <span class="fecha">2021 - 2021</span>
-                        <p>Instructor en la asignatura de Programación, para guiar en el desarrollo de
-                            habilidades, tales como: .NET FRAMEWORK Y C# y .NET CORE Y C# y base de
-                            datos: SQL SERVER. También agregar que he trabajo en proyectos como
-                            freelancer de las tecnologías mencionadas con anterioridad.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </section>
+    /* Contador */
+    .countdown{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    .time-box{
+      background:#ffffffd9;border:1px solid #ffffff;
+      padding:12px 14px;border-radius:12px;text-align:center;min-width:82px
+    }
+    .time-box b{display:block;font-size:22px}
+    .time-box span{font-size:12px;color:var(--muted)}
 
-    <!-- SECCION PORTFOLIO -->
-        <section id="portfolio" class="portfolio">
-        <div class="contenido-seccion">
-            <h2>Portafolio</h2>
-            <div class="galeria">
-                <div class="proyecto">
-                    <img src="img/Diseño_web_1.png" alt="">
-                    <div class="overlay">
-                        <h3>Diseño Web</h3>
-                        <p>Ejemplo</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Diseño_web_2.png" alt="">
-                    <div class="overlay">
-                        <h3>Diseño Web</h3>
-                        <p>Ejemplo</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Diseño_web_3.png" alt="">
-                    <div class="overlay">
-                        <h3>Diseño Web</h3>
-                        <p>Ejemplo</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Diseño_web_4.png" alt="">
-                    <div class="overlay">
-                        <h3>Diseño Web</h3>
-                        <p>Ejemplo</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Diseño_web_5.png" alt="">
-                    <div class="overlay">
-                        <h3>Diseño Web</h3>
-                        <p>Ejemplo</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Diseño_web_6.png" alt="">
-                    <div class="overlay">
-                        <h3>Diseño Web</h3>
-                        <p>Ejemplo</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </section>
+    /* Botones */
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:12px 16px;border-radius:12px;font-weight:600;border:1px solid transparent;
+      transition:.2s;cursor:pointer
+    }
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-outline{background:#fff;border-color:#e5e2ff;color:var(--primary)}
+    .btn-ghost{background:transparent;border-color:#ddd;color:var(--ink)}
+    .btn:hover{transform:translateY(-1px)}
 
-    <!-- SECCION CONTACTO -->
-        <section id="contacto" class="contacto">
-        <div class="contenido-seccion">
-            <h2>Contacto</h2>
-            <div class="fila">
-                <!-- Mapa -->
-                <div class="col">
-                    <img src="img/MapaST.png" alt="">
-                    <div class="info">
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Los Cipreses, Santa Tecla.
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                Contactame: 7914-4383
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-envelope"></i>
-                                Email: joseantonzr@gmail.com
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </section>
+    /* Lista eventos */
+    .event{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed #eee}
+    .event:last-child{border-bottom:none}
+    .event .dot{width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--accent)}
+    .event h3{margin:0;font-size:18px}
+    .event .meta{font-size:.95rem;color:var(--muted)}
 
-    <!-- PROXIMAMENTE
-        <footer>
-            <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
+    /* Galería */
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+    @media (min-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    .gallery img{border-radius:12px;aspect-ratio:1/1;object-fit:cover}
+
+    /* Footer */
+    .footer{text-align:center;color:var(--muted);font-size:.9rem;padding:22px}
+
+    /* Detalles finos */
+    .seal{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(135deg,#fff 0%, #fbf9ff 100%);
+      border:1px solid #efeafc;padding:10px 14px;border-radius:12px;margin-top:8px;color:#6a54c6
+    }
+    .kicker{letter-spacing:.18em;text-transform:uppercase;color:#7d7d7d;font-size:.78rem}
+
+    /* Animación */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .fade{animation:fadeUp .6s ease both}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+
+      <!-- PORTADA -->
+      <header class="hero" role="banner" aria-label="Invitación de boda">
+        <div class="hero-content fade">
+          <span class="badge">Con todo nuestro amor</span>
+
+          <h1 class="names">
+            José <span class="amp">&amp;</span> Melissa
+          </h1>
+
+          <div class="date">Sábado, 14 de febrero de 2026 · 4:30 p. m.</div>
+
+          <div class="countdown" id="countdown" aria-label="Cuenta regresiva"></div>
+
+          <div class="actions" style="justify-content:center;margin-top:18px">
+            <!-- WhatsApp RSVP: EDITAR número y mensaje -->
+            <a class="btn btn-outline" href="https://wa.me/50379144383?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20José%20y%20Melissa.%20Mi%20nombre%20es%3A" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">
+              ✅ Confirmar asistencia (RSVP)
             </a>
-            <div class="redes">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-skype"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-solid fa-rss"></i></a>
+            <!-- Google Calendar (UTC correcto para 14 feb 2026 16:30–22:00 hora local UTC-6) -->
+            <a class="btn btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20José%20y%20Melissa&dates=20260214T223000Z/20260215T040000Z&location=Lago%20de%20Coatepeque%2C%20Santa%20Ana%20Department%2C%20El%20Salvador&details=Ceremonia%20y%20recepción%20en%20el%20mismo%20lugar.%20Waze%3A%20https%3A%2F%2Fwaze.com%2Ful%2Fhd42r48sec" target="_blank" rel="noopener" aria-label="Agregar al calendario">
+              📅 Agregar al calendario
+            </a>
+            <!-- Waze -->
+            <a class="btn btn-outline" href="https://waze.com/ul/hd42r48sec" target="_blank" rel="noopener" aria-label="Abrir ubicación en Waze">
+              🚗 Abrir en Waze
+            </a>
+          </div>
+
+          <div class="seal" aria-label="Verso bíblico">Salmo 107:1 · “Porque eterno es su amor”</div>
+        </div>
+      </header>
+
+      <!-- CUERPO -->
+      <section class="grid-2" aria-label="Detalles del evento">
+        <div class="panel fade">
+          <div class="kicker">Detalles</div>
+          <h2>Celebración</h2>
+
+          <!-- Mensaje romántico -->
+          <p class="muted">
+            Con el corazón lleno de amor y gratitud, queremos compartir contigo el comienzo
+            de una nueva etapa en nuestras vidas. Tu presencia hará este día aún más significativo.
+          </p>
+
+          <!-- Unificado: Ceremonia & Recepción en el mismo lugar -->
+          <div class="event" aria-label="Lugar del evento">
+            <div class="dot" aria-hidden="true"></div>
+            <div>
+              <h3>Palo Alto Lakehouse</h3>
+              <div class="meta">Lago de Coatepeque</div>
+              <div class="muted">Santa Ana, El Salvador</div>
             </div>
-        </footer>
-     -->
-        
-        <script src="script.js"></script>
-    </body>
+          </div>
+
+          <p class="muted" style="margin-top:8px">
+            Ceremonia y recepción se llevarán a cabo en el mismo lugar.
+          </p>
+
+          <div class="actions" style="margin-top:14px">
+            <!-- mailto alternativo -->
+            <a class="btn btn-ghost" href="mailto:joseantonzr@gmail.com?subject=RSVP%20Boda&body=Hola%2C%20confirmo%20mi%20asistencia.%20Nombre%3A%0AMensaje%3A%20" target="_blank" rel="noopener" aria-label="Confirmar asistencia por correo">
+              ✉️ Confirmar por correo
+            </a>
+          </div>
+        </div>
+
+        <div class="panel fade">
+          <div class="kicker">Información útil</div>
+          <h2>Dress code · Regalos</h2>
+          <ul style="margin:0 0 6px 18px">
+            <li>Código de vestimenta: <b>Formal</b>.</li>
+            <li>Acompáñanos con tonos suaves y elegantes.</li>
+            <li>Clima agradable durante la tarde y fresco por la noche.</li>
+            <li>Celebración solo para adultos.</li>
+          </ul>
+
+          <!-- Regalos -->
+          <p class="muted" style="margin-top:8px">
+            Tu presencia es el mejor regalo que podríamos recibir. Asimismo, queremos comentar que el regalo será en sobre.
+          </p>
+
+          <hr style="border:none;border-top:1px dashed #eee;margin:18px 0">
+
+          <div class="kicker">Notas</div>
+          <p class="muted">
+            Te esperamos con ilusión 20 minutos antes del inicio de la ceremonia.
+            Habrá estacionamiento disponible en el lugar.
+          </p>
+        </div>
+      </section>
+
+      <!-- GALERÍA (opcional) -->
+      <section class="fade" aria-label="Nuestra historia">
+        <div class="container-inner" style="max-width:900px;margin:auto">
+          <div class="kicker">Momentos</div>
+          <h2>Nuestra historia de amor</h2>
+          <div class="gallery">
+            <!-- Cambia las rutas de imagen por las tuyas -->
+            <img src="/img/Foto1.jpeg" alt="José y Melissa, momento 1">
+            <img src="/img/Foto2.jpeg" alt="José y Melissa, momento 2">
+            <img src="/img/Foto3.jpeg" alt="José y Melissa, momento 3">
+            <img src="/img/Foto4.jpg" alt="José y Melissa, momento 4">
+            <img src="/img/Foto5.jpg" alt="José y Melissa, momento 5">
+            <img src="/img/Foto6.jpg" alt="José y Melissa, momento 6">
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        Con todo nuestro amor, José &amp; Melissa · <span id="year"></span>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // === FECHA DEL EVENTO ===
+    // año, mes-1, día, hora, minuto (mes empieza en 0)
+    const eventDate = new Date(2026, 1, 14, 16, 30); // 14 feb 2026, 4:30 p. m.
+
+    const cd = document.getElementById('countdown');
+    const pad = n => String(n).padStart(2,'0');
+
+    function renderCountdown(){
+      const now = new Date();
+      const diff = eventDate - now;
+
+      if(diff <= 0){
+        cd.innerHTML = '<div class="time-box"><b>¡Hoy!</b><span>Es el gran día</span></div>';
+        return;
+      }
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff / (1000*60*60)) % 24);
+      const m = Math.floor((diff / (1000*60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      cd.innerHTML = `
+        <div class="time-box"><b>${pad(d)}</b><span>Días</span></div>
+        <div class="time-box"><b>${pad(h)}</b><span>Horas</span></div>
+        <div class="time-box"><b>${pad(m)}</b><span>Min</span></div>
+        <div class="time-box"><b>${pad(s)}</b><span>Seg</span></div>
+      `;
+    }
+    renderCountdown();
+    setInterval(renderCountdown, 1000);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
