@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invitación | Boda de José & Melissa</title>
-  <meta name="description" content="Acompáñanos a celebrar nuestra boda. Con todo nuestro amor, José & Melissa. 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
+  <title>Invitación | Boda de José &amp; Melissa</title>
+  <meta name="description" content="Acompáñanos a celebrar nuestra boda. Con todo nuestro amor, José &amp; Melissa. 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
   <meta name="theme-color" content="#12c6d8" />
 
-  <!-- OG / Twitter -->
+  <!-- SEO / Social -->
   <meta property="og:type" content="event" />
-  <meta property="og:title" content="Boda de José & Melissa" />
+  <meta property="og:title" content="Boda de José &amp; Melissa" />
   <meta property="og:description" content="Sábado 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
   <meta property="og:image" content="portada.jpg" />
   <meta property="og:locale" content="es_SV" />
   <meta property="og:site_name" content="Invitación de boda" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Boda de José & Melissa" />
+  <meta name="twitter:title" content="Boda de José &amp; Melissa" />
   <meta name="twitter:description" content="Acompáñanos a celebrar nuestra boda en el Lago de Coatepeque" />
   <meta name="twitter:image" content="portada.jpg" />
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD: Evento -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,29 +51,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ========= BASE ========= */
+    /* ========= BASE (sin grises) ========= */
     :root{
       --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --shadow: 0 10px 30px color-mix(in oklab, #12c6d8 10%, transparent);
       --ease: cubic-bezier(.22,.61,.36,1);
-      --ink: #203238;
-      --muted: #566a71;
+
+      /* Neutros con color (NO grises) */
+      --ink: #0f3a41;       /* mar profundo (texto principal) */
+      --muted: #1e6e78;     /* turquesa medio (texto secundario) */
       --paper: #ffffff;
+
+      /* Accesorios beach */
+      --sand: #e8d7b1;
     }
 
-    /* ========= TEMA TURQUESA+ ========= */
+    /* ========= TEMA TURQUESA ========= */
     html[data-theme="turquesa"]{
-      --bg: #f2fbfd;                 /* cielo agua claro */
-      --primary: #12c6d8;            /* turquesa */
-      --primary-600: #0daabd;        /* turquesa profundo */
-      --primary-700: #0a8fa1;        /* más contraste en hover y detalles */
-      --accent: #cfeff5;             /* agua clarita */
-      --accent-2: #e6f8fb;           /* fondo chips/realces */
-      --hero-overlay: linear-gradient(to bottom, rgba(18,198,216,.28), rgba(9,120,150,.10));
+      --bg: #f1fbfd;
+      --primary: #12c6d8;          /* turquesa */
+      --primary-600: #0daabd;      /* turquesa profundo */
+      --primary-700: #0a8fa1;      /* énfasis/hover */
+      --accent: #cfeff5;           /* agua clarita */
+      --accent-2: #e6f8fb;         /* chips/realces */
+      --hero-overlay: linear-gradient(to bottom, rgba(18,198,216,.30), rgba(9,120,150,.12));
       --glow: rgba(18,198,216,.22);
       --seal-ink: #0d6d7a;
-      --gold: #d0b87a;
+      --gold: #d0b87a;             /* arena dorada */
       --wave: #bfeaf0;
+      --line: color-mix(in oklab, var(--primary) 28%, #e7fafc);
+      --panel-border: color-mix(in oklab, var(--primary) 22%, #e9f9fb);
     }
 
     *{box-sizing:border-box}
@@ -97,7 +104,7 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       overflow:hidden;
-      border:1px solid rgba(0,0,0,.05);
+      border:1px solid var(--panel-border);
     }
 
     /* Portada */
@@ -109,8 +116,9 @@
       color:#0b1012; text-align:center; will-change: background-position; isolation:isolate;
     }
     .hero::after{
+      /* sombreado frío (sin gris/negro) para legibilidad del texto */
       content:""; position:absolute; inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.26));
+      background:linear-gradient(to bottom, rgba(7,40,46,.10), rgba(7,40,46,.24));
       pointer-events:none; z-index:0;
     }
     .hero-content{position:relative; z-index:1; max-width:800px; animation: heroIn .9s var(--ease) both .15s}
@@ -122,13 +130,14 @@
       padding:6px 12px; border-radius:999px;
       letter-spacing:.16em; text-transform:uppercase; font-size:.78rem;
       margin-bottom:16px; backdrop-filter: blur(6px);
-      color:#fff; box-shadow: 0 4px 18px rgba(0,0,0,.12) inset;
+      color:#fff; box-shadow: 0 4px 18px rgba(7,40,46,.10) inset;
     }
 
     .names{
       font-family:"Cormorant Garamond",serif; font-weight:500;
       font-size: clamp(38px, 6vw, 72px); letter-spacing: .12em; text-transform: uppercase;
-      line-height:1.05; color:#ffffff; text-shadow: 0 2px 12px rgba(0,0,0,.25);
+      line-height:1.05; color:#ffffff; 
+      text-shadow: 0 2px 12px rgba(7,40,46,.25); /* sombra azul petróleo (no gris) */
       position: relative; margin:10px 0 6px;
     }
     .names::after{
@@ -145,10 +154,7 @@
     .date{ letter-spacing: .16em; text-transform: uppercase; font-size:.95rem; color:#fff; opacity:.98; margin-top:6px }
 
     /* Onda separadora beach */
-    .wave{
-      display:block; width:100%; height:auto;
-      background: linear-gradient(to bottom, transparent, var(--bg));
-    }
+    .wave{ display:block; width:100%; height:auto; background: linear-gradient(to bottom, transparent, var(--bg)) }
     .wave svg{ display:block; width:100%; height:auto }
 
     /* Secciones */
@@ -156,29 +162,29 @@
     .grid-2{display:grid;gap:24px;grid-template-columns:1fr}
     @media (min-width:820px){.grid-2{grid-template-columns:1.1fr .9fr}}
     .panel{
-      background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:30px 28px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.03);
+      background:#fff; border:1px solid var(--panel-border); border-radius:14px; padding:30px 28px;
+      box-shadow: 0 10px 24px color-mix(in oklab, var(--primary) 8%, transparent);
     }
     h2{
       font-family:"Cormorant Garamond",serif; font-weight:500; font-size:clamp(22px, 3vw, 28px);
-      margin:0 0 12px; letter-spacing:.04em; line-height:1.2; color:#1e2a30;
+      margin:0 0 12px; letter-spacing:.04em; line-height:1.2; color:#0f3a41;
     }
     .kicker{
       font-family:"Inter",sans-serif; font-size:.7rem; letter-spacing:.28em; text-transform:uppercase;
-      margin-bottom:6px; color:#7a8a93;
+      margin-bottom:6px; color:var(--muted);
     }
     .muted, p, li{ font-size:0.98rem; font-weight:400; line-height:1.8; letter-spacing:.015em; color:var(--muted) }
     .panel p + p, .panel ul + p{ margin-top:14px }
 
-    /* Realces turquesa */
+    /* Realce turquesa */
     .highlight{
       background: var(--accent-2);
       border-left: 4px solid var(--primary);
       padding: 10px 12px; border-radius: 10px;
-      box-shadow: inset 0 0 0 1px rgba(18,198,216,.08);
+      box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--primary) 12%, transparent);
     }
 
-    /* Contador con más turquesa */
+    /* Contador (bordes/sombras sin gris) */
     .countdown{
       display:grid; gap:10px; justify-content:center; align-items:stretch;
       grid-template-columns: repeat(4, minmax(78px, 1fr));
@@ -186,14 +192,14 @@
     }
     .time-box{
       background:#ffffffee;
-      border:1px solid color-mix(in oklab, var(--primary) 35%, #fff);
+      border:1px solid color-mix(in oklab, var(--primary) 40%, #fff);
       border-radius:12px; text-align:center; padding:12px 14px;
       transition: transform .25s var(--ease), box-shadow .25s var(--ease); will-change: transform; perspective:600px;
       box-shadow: 0 6px 18px var(--glow);
     }
     .time-box b{
       display:block; font-size: clamp(22px, 5.5vw, 28px);
-      font-variant-numeric: tabular-nums; color:#16363d; line-height:1.1; transform-style: preserve-3d;
+      font-variant-numeric: tabular-nums; color:#0f3a41; line-height:1.1; transform-style: preserve-3d;
     }
     .time-box span{
       display:block; font-size:12px; color:var(--primary-700); margin-top:6px;
@@ -217,8 +223,8 @@
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px; justify-content:center}
     .btn{
       display:inline-flex;align-items:center;gap:8px; padding:12px 16px; border-radius:12px; font-weight:600;
-      border:1px solid color-mix(in oklab, var(--primary) 45%, #fff);
-      background: linear-gradient(180deg,#fff 0%, color-mix(in oklab, var(--accent) 60%, #fff) 100%);
+      border:1px solid color-mix(in oklab, var(--primary) 50%, #fff);
+      background: linear-gradient(180deg,#fff 0%, color-mix(in oklab, var(--accent) 70%, #fff) 100%);
       color:#0f2f35; cursor:pointer; position:relative; transition: transform .2s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
       isolation:isolate;
     }
@@ -230,20 +236,21 @@
     }
     .btn:hover::after{ opacity:1 }
 
-    /* Lista eventos */
-    .event{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed color-mix(in oklab, var(--primary) 22%, #e9f4f6)}
+    /* Lista eventos (línea sin gris) */
+    .event{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
     .event:last-child{border-bottom:none}
     .event .dot{width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--primary)}
-    .event h3{margin:0;font-size:18px;color:#1e2a30}
+    .event h3{margin:0;font-size:18px;color:#0f3a41}
     .event .meta{font-size:.95rem;color:var(--muted)}
 
     /* Galería */
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
     @media (min-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}}
     .gallery img{
-      border-radius:12px;aspect-ratio:1/1;object-fit:cover; transition: transform .4s var(--ease), box-shadow .4s var(--ease), filter .3s var(--ease)
+      border-radius:12px;aspect-ratio:1/1;object-fit:cover;
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease), filter .3s var(--ease)
     }
-    .gallery img:hover{ transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 24px rgba(0,0,0,.08); filter: saturate(1.05) }
+    .gallery img:hover{ transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 24px color-mix(in oklab, var(--primary) 16%, transparent); filter: saturate(1.05) }
     .chip{
       display:inline-block; padding:6px 10px; border-radius:999px; font-size:.8rem; color:#0d2f35;
       background: var(--accent-2); border:1px solid color-mix(in oklab, var(--primary) 30%, #fff);
@@ -298,7 +305,7 @@
             <a class="btn" href="https://wa.me/50379144383?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20José%20y%20Melissa.%20Mi%20nombre%20es%3A" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">
               ✅ Confirmar asistencia
             </a>
-            <!-- Google Calendar -->
+            <!-- Google Calendar (UTC: 16:30–22:00 hora local UTC-6) -->
             <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20José%20y%20Melissa&dates=20260214T223000Z/20260215T040000Z&location=Lago%20de%20Coatepeque%2C%20Santa%20Ana%20Department%2C%20El%20Salvador&details=Ceremonia%20y%20recepción%20en%20el%20mismo%20lugar.%20Waze%3A%20https%3A%2F%2Fwaze.com%2Ful%2Fhd42r48sec" target="_blank" rel="noopener" aria-label="Agregar al calendario">
               📅 Agregar al calendario
             </a>
@@ -356,7 +363,7 @@
               <li><b>Sugerimos amablemente regalo en sobre.</b></li>
             </ul>
 
-            <hr style="border:none;border-top:1px dashed color-mix(in oklab, var(--primary) 25%, #e7f4f6);margin:18px 0">
+            <hr style="border:none;border-top:1px dashed var(--line);margin:18px 0">
 
             <div class="kicker">Notas</div>
             <p class="muted">
@@ -372,28 +379,32 @@
             <div class="kicker">Momentos</div>
             <h2>Nuestra historia de amor</h2>
             <div class="gallery" role="list" aria-label="Galería de fotos">
-              <img src="/img/Foto1.jpeg" alt="José y Melissa, momento 1" loading="lazy" decoding="async">
-              <img src="/img/Foto2.jpeg" alt="José y Melissa, momento 2" loading="lazy" decoding="async">
-              <img src="/img/Foto3.jpeg" alt="José y Melissa, momento 3" loading="lazy" decoding="async">
-              <img src="/img/Foto4.jpg"  alt="José y Melissa, momento 4" loading="lazy" decoding="async">
-              <img src="/img/Foto5.jpg"  alt="José y Melissa, momento 5" loading="lazy" decoding="async">
-              <img src="/img/Foto6.jpg"  alt="José y Melissa, momento 6" loading="lazy" decoding="async">
+              <img src="/img/Foto1.jpeg" alt="José y Melissa, momento 1" loading="lazy" decoding="async" />
+              <img src="/img/Foto2.jpeg" alt="José y Melissa, momento 2" loading="lazy" decoding="async" />
+              <img src="/img/Foto3.jpeg" alt="José y Melissa, momento 3" loading="lazy" decoding="async" />
+              <img src="/img/Foto4.jpg"  alt="José y Melissa, momento 4" loading="lazy" decoding="async" />
+              <img src="/img/Foto5.jpg"  alt="José y Melissa, momento 5" loading="lazy" decoding="async" />
+              <img src="/img/Foto6.jpg"  alt="José y Melissa, momento 6" loading="lazy" decoding="async" />
             </div>
           </div>
         </section>
       </main>
 
       <footer class="footer" role="contentinfo">
-        Con todo nuestro amor, José & Melissa 💙 · <span id="year"></span>
+        Con todo nuestro amor, José &amp; Melissa 💙 · <span id="year"></span>
       </footer>
     </div>
   </div>
 
   <script>
     // === FECHA DEL EVENTO ===
+    // año, mes-1, día, hora, minuto (mes empieza en 0)
     const eventDate = new Date(2026, 1, 14, 16, 30); // 14 feb 2026, 4:30 p. m. (hora local)
+
     const cd = document.getElementById('countdown');
     const pad = n => String(n).padStart(2,'0');
+
+    // Guarda valores previos para animar solo cuando cambian
     const prev = { d:null, h:null, m:null, s:null };
 
     function timeBox(label, value, changed){
@@ -436,7 +447,7 @@
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll reveal
+    // Scroll reveal con respeto a reduce-motion
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(!prefersReduced && 'IntersectionObserver' in window){
       const els = document.querySelectorAll('.fade');
