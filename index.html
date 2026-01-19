@@ -1,21 +1,22 @@
+
 <!doctype html>
-<html lang="es" dir="ltr" data-theme="turquesa">
+<html lang="es" dir="ltr" data-theme="turquesa" class="name-style-b">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invitación | Boda de José &amp; Melissa</title>
-  <meta name="description" content="Acompáñanos a celebrar nuestra boda. Con todo nuestro amor, José &amp; Melissa. 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
+  <title>Invitación | Boda de José & Melissa</title>
+  <meta name="description" content="Acompáñanos a celebrar nuestra boda. Con todo nuestro amor, José & Melissa. 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
   <meta name="theme-color" content="#12c6d8" />
 
   <!-- SEO / Social -->
   <meta property="og:type" content="event" />
-  <meta property="og:title" content="Boda de José &amp; Melissa" />
+  <meta property="og:title" content="Boda de José & Melissa" />
   <meta property="og:description" content="Sábado 14 de febrero de 2026 · 4:30 p. m. · Lago de Coatepeque" />
   <meta property="og:image" content="portada.jpg" />
   <meta property="og:locale" content="es_SV" />
   <meta property="og:site_name" content="Invitación de boda" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Boda de José &amp; Melissa" />
+  <meta name="twitter:title" content="Boda de José & Melissa" />
   <meta name="twitter:description" content="Acompáñanos a celebrar nuestra boda en el Lago de Coatepeque" />
   <meta name="twitter:image" content="portada.jpg" />
 
@@ -51,155 +52,227 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ========= BASE (sin grises) ========= */
+    /* ========= SISTEMA DE DISEÑO ========= */
     :root{
       --radius: 16px;
-      --shadow: 0 10px 30px color-mix(in oklab, #12c6d8 10%, transparent);
       --ease: cubic-bezier(.22,.61,.36,1);
+      --paper: #fff;
 
-      /* Neutros con color (NO grises) */
-      --ink: #0f3a41;       /* mar profundo (texto principal) */
-      --muted: #1e6e78;     /* turquesa medio (texto secundario) */
-      --paper: #ffffff;
-
-      /* Accesorios beach */
-      --sand: #e8d7b1;
-    }
-
-    /* ========= TEMA TURQUESA ========= */
-    html[data-theme="turquesa"]{
+      /* Paleta beach (sin grises) */
       --bg: #f1fbfd;
-      --primary: #12c6d8;          /* turquesa */
-      --primary-600: #0daabd;      /* turquesa profundo */
-      --primary-700: #0a8fa1;      /* énfasis/hover */
-      --accent: #cfeff5;           /* agua clarita */
-      --accent-2: #e6f8fb;         /* chips/realces */
-      --hero-overlay: linear-gradient(to bottom, rgba(18,198,216,.30), rgba(9,120,150,.12));
-      --glow: rgba(18,198,216,.22);
-      --seal-ink: #0d6d7a;
-      --gold: #d0b87a;             /* arena dorada */
+      --ink: #0f3a41;       /* texto principal (mar profundo) */
+      --muted: #1e6e78;     /* texto secundario (turquesa medio) */
+      --primary: #12c6d8;   /* turquesa */
+      --primary-600:#0daabd;/* turquesa profundo */
+      --primary-700:#0a8fa1;
+      --accent: #cfeff5;    /* agua clarita */
+      --accent-2:#e6f8fb;   /* chips/realces */
+      --gold: #d4b15f;      /* dorado elegante */
+      --gold-2:#c69a3a;     /* oro viejo */
+      --shadow: 0 10px 30px rgba(18,198,216,.18);
+      --panel-border: rgba(18,198,216,.22);
+      --line: rgba(18,198,216,.28);
       --wave: #bfeaf0;
-      --line: color-mix(in oklab, var(--primary) 28%, #e7fafc);
-      --panel-border: color-mix(in oklab, var(--primary) 22%, #e9f9fb);
     }
 
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
     body{
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      letter-spacing: 0.01em;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      letter-spacing:.01em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
     img{max-width:100%;display:block}
     a{color:var(--primary-700);text-decoration:none}
     a:hover{opacity:.96}
-    .container{max-width:960px;margin:auto;padding:24px}
+    .container{max-width:980px;margin:auto;padding:24px}
     main{display:block}
 
-    /* Tarjeta */
+    /* ========= TARJETA GLOBAL ========= */
     .card{
       background:var(--paper);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      border-radius:calc(var(--radius) + 4px);
       overflow:hidden;
       border:1px solid var(--panel-border);
+      box-shadow: var(--shadow);
     }
 
-    /* Portada */
+    /* ========= HERO ========= */
     .hero{
-      position:relative; min-height:60vh;
-      display:grid; place-items:center;
-      padding:48px 24px;
-      background: var(--hero-overlay), url('portada.jpg') center/cover no-repeat;
-      color:#0b1012; text-align:center; will-change: background-position; isolation:isolate;
+      position:relative; min-height:68vh;
+      display:grid; place-items:center; padding:52px 24px 42px;
+      background:
+        linear-gradient(to bottom, rgba(18,198,216,.30), rgba(9,120,150,.12)),
+        url('portada.jpg') center/cover no-repeat;
+      text-align:center; color:#0b1012; isolation:isolate;
     }
+    /* sombreado frío (sin gris/negro) para legibilidad sobre foto */
     .hero::after{
-      /* sombreado frío (sin gris/negro) para legibilidad del texto */
       content:""; position:absolute; inset:0;
-      background:linear-gradient(to bottom, rgba(4, 231, 247, 0.1), rgba(0, 255, 128, 0.24));
-      pointer-events:none; z-index:0;
+      background:linear-gradient(to bottom, rgba(7,40,46,.12), rgba(7,40,46,.28));
+      z-index:0; pointer-events:none;
     }
-    .hero-content{position:relative; z-index:1; max-width:800px; animation: heroIn .9s var(--ease) both .15s}
-    @keyframes heroIn{ from{opacity:0; transform: translateY(16px) scale(.985); filter: blur(4px)} to{opacity:1; transform:none; filter: none} }
+
+    /* Tarjeta de portada “frosted” con borde dorado */
+    .hero-card{
+      position:relative; z-index:1; max-width:840px; margin:auto;
+      padding:28px 22px 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,.34), rgba(255,255,255,.22));
+      border-radius:18px;
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,.50);
+      box-shadow: 0 20px 40px rgba(18,198,216,.22);
+    }
+    /* Borde dorado fino */
+    .hero-card::before{
+      content:""; position:absolute; inset:0; border-radius:18px; padding:1px;
+      background: linear-gradient(90deg, rgba(212,177,95,.8), rgba(255,255,255,.0), rgba(212,177,95,.8));
+      -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      pointer-events:none;
+    }
+
+    /* Monograma */
+    .monogram{
+      width:62px; height:62px; margin:0 auto 14px;
+      border-radius:50%;
+      display:grid; place-items:center;
+      background: radial-gradient(60% 60% at 50% 45%, #f7f0cf, #e6cf86);
+      color:#724f05; font-weight:700; letter-spacing:.06em;
+      border:2px solid #d4b15f; box-shadow: 0 6px 18px rgba(212,177,95,.35);
+      font-family:"Cormorant Garamond",serif;
+    }
 
     .badge{
       display:inline-block; background:rgba(255,255,255,.26);
-      border:1px solid rgba(255,255,255,.42);
-      padding:6px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.55);
+      padding:7px 14px; border-radius:999px;
       letter-spacing:.16em; text-transform:uppercase; font-size:.78rem;
-      margin-bottom:16px; backdrop-filter: blur(6px);
-      color:#000000; box-shadow: 0 4px 18px rgba(7,40,46,.10) inset;
+      margin:10px 0 18px; backdrop-filter: blur(6px);
+      color:var(--gold); text-shadow:0 1px 0 rgba(7,40,46,.10);
     }
 
     .names{
       font-family:"Cormorant Garamond",serif; font-weight:500;
-      font-size: clamp(38px, 6vw, 72px); letter-spacing: .12em; text-transform: uppercase;
-      line-height:1.05; color:#000000; 
-      text-shadow: 0 2px 12px rgba(7,40,46,.25); /* sombra azul petróleo (no gris) */
-      position: relative; margin:10px 0 6px;
+      font-size: clamp(40px, 6.4vw, 76px);
+      letter-spacing:.14em; text-transform:uppercase; line-height:1.04;
+      margin:8px 0 8px;
+      position:relative;
     }
-    .names::after{
+    .amp{font-style:italic; font-weight:300; margin:0 .2em; color:#d4b15f}
+
+    /* ===== Opción B: negro elegante con filo dorado (tu elección) ===== */
+    html.name-style-b .names{
+      color:#0b0b0b; /* negro profundo */
+      -webkit-text-stroke:1px rgba(212,177,95,.65); text-stroke:1px rgba(212,177,95,.65);
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.22),
+        0 10px 26px rgba(18,198,216,.20);
+    }
+    html.name-style-b .names::after{
       content:""; position:absolute; inset:0;
-      background: linear-gradient(120deg, transparent 0%, rgba(93, 169, 199, 0) 35%, rgba(230,255,255,.65) 50%, rgba(255,255,255,0) 65%, transparent 100%);
-      mix-blend-mode: screen; transform: translateX(-120%);
-      animation: sheen 3.6s ease-in-out infinite 1.2s; pointer-events:none;
+      background:linear-gradient(120deg,transparent 0%, rgba(255,255,255,.35) 50%, transparent 100%);
+      mix-blend-mode:screen; transform:translateX(-120%);
+      animation: sheen 4s var(--ease) infinite 1s;
+      pointer-events:none;
     }
     @keyframes sheen{
-      0%{ transform: translateX(-120%); opacity: 0 } 20%{ opacity: 1 }
-      60%{ transform: translateX(120%); opacity: 1 } 100%{ transform: translateX(120%); opacity: 0 }
+      0%{transform:translateX(-120%); opacity:0}
+      20%{opacity:1}
+      60%,100%{transform:translateX(120%); opacity:0}
     }
-    .amp{ font-family:"Cormorant Garamond",serif; font-style: italic; font-weight:300; margin: 0 .15em; color:#eafcff }
-    .date{ letter-spacing: .16em; text-transform: uppercase; font-size:.95rem; color:#000000; opacity:.98; margin-top:6px }
 
-    /* Onda separadora beach */
+    .date{letter-spacing:.18em; text-transform:uppercase; font-size:.95rem; color:#ffffff; opacity:.98}
+
+    /* Divisor elegante */
+    .divider{display:flex;align-items:center; gap:14px; justify-content:center; margin:16px auto 10px; width:min(520px, 90%)}
+    .divider::before,.divider::after{
+      content:""; height:1px; flex:1;
+      background: linear-gradient(90deg, rgba(212,177,95,.0), rgba(212,177,95,.8), rgba(212,177,95,.0));
+    }
+    .divider i{
+      width:8px; height:8px; border-radius:50%; background:#d4b15f; display:inline-block; box-shadow: 0 0 0 3px rgba(212,177,95,.18);
+    }
+
+    /* CTA botones */
+    .actions{display:flex;gap:12px;flex-wrap:wrap; justify-content:center; margin-top:18px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px; padding:12px 16px;
+      border-radius:12px; font-weight:600; border:1px solid transparent; cursor:pointer;
+      transition: transform .2s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+      position:relative; isolation:isolate;
+    }
+    .btn-primary{
+      background: linear-gradient(180deg,#14cfe2 0%, #0daabd 100%); color:#fff;
+      border-color: #0fb8ca;
+      box-shadow: 0 10px 24px rgba(18,198,216,.25);
+    }
+    .btn-primary:hover{ transform:translateY(-2px); box-shadow: 0 14px 30px rgba(18,198,216,.32) }
+    .btn-outline{
+      background:#fff; color:#0f2f35; border-color: rgba(18,198,216,.40);
+    }
+    .btn-outline:hover{ transform:translateY(-2px); box-shadow: 0 10px 24px rgba(18,198,216,.18) }
+
+    /* ========= OLA DECORATIVA ========= */
     .wave{ display:block; width:100%; height:auto; background: linear-gradient(to bottom, transparent, var(--bg)) }
     .wave svg{ display:block; width:100%; height:auto }
 
-    /* Secciones */
+    /* ========= SECCIONES ========= */
     section{padding:40px 24px}
     .grid-2{display:grid;gap:24px;grid-template-columns:1fr}
-    @media (min-width:820px){.grid-2{grid-template-columns:1.1fr .9fr}}
+    @media (min-width:860px){.grid-2{grid-template-columns:1.1fr .9fr}}
+
     .panel{
       background:#fff; border:1px solid var(--panel-border); border-radius:14px; padding:30px 28px;
-      box-shadow: 0 10px 24px color-mix(in oklab, var(--primary) 8%, transparent);
+      box-shadow: 0 10px 24px rgba(18,198,216,.10);
     }
     h2{
-      font-family:"Cormorant Garamond",serif; font-weight:500; font-size:clamp(22px, 3vw, 28px);
-      margin:0 0 12px; letter-spacing:.04em; line-height:1.2; color:#0f3a41;
+      font-family:"Cormorant Garamond",serif; font-weight:500; font-size: clamp(22px, 3vw, 28px);
+      margin:0 0 10px; letter-spacing:.04em; color:#0f3a41;
     }
     .kicker{
       font-family:"Inter",sans-serif; font-size:.7rem; letter-spacing:.28em; text-transform:uppercase;
       margin-bottom:6px; color:var(--muted);
     }
-    .muted, p, li{ font-size:0.98rem; font-weight:400; line-height:1.8; letter-spacing:.015em; color:var(--muted) }
+    .muted, p, li{ font-size:1rem; font-weight:400; line-height:1.85; letter-spacing:.01em; color:var(--muted) }
     .panel p + p, .panel ul + p{ margin-top:14px }
 
-    /* Realce turquesa */
+    /* Timeline de eventos */
+    .event{display:grid; grid-template-columns:auto 1fr; gap:12px; padding:14px 0; border-bottom:1px dashed var(--line)}
+    .event:last-child{border-bottom:none}
+    .event .dot{
+      width:38px; height:38px; border-radius:12px; display:grid; place-items:center;
+      background: linear-gradient(180deg, #e8fbff, #d7f5fa);
+      border:1px solid rgba(18,198,216,.35);
+      box-shadow: 0 6px 16px rgba(18,198,216,.14);
+      font-size:18px;
+    }
+    .event h3{margin:0; font-size:18px; color:#0f3a41}
+    .event .meta{font-size:.95rem; color:var(--muted)}
+
+    /* Realces */
     .highlight{
       background: var(--accent-2);
       border-left: 4px solid var(--primary);
       padding: 10px 12px; border-radius: 10px;
-      box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--primary) 12%, transparent);
+      box-shadow: inset 0 0 0 1px rgba(18,198,216,.12);
     }
 
-    /* Contador (bordes/sombras sin gris) */
+    /* ========= CONTADOR ========= */
     .countdown{
-      display:grid; gap:10px; justify-content:center; align-items:stretch;
-      grid-template-columns: repeat(4, minmax(78px, 1fr));
-      max-width: 640px; margin:18px auto 0;
+      display:grid; gap:12px; justify-content:center; align-items:stretch;
+      grid-template-columns: repeat(4, minmax(80px, 1fr));
+      max-width: 680px; margin:22px auto 2px;
     }
     .time-box{
       background:#ffffffee;
-      border:1px solid color-mix(in oklab, var(--primary) 40%, #fff);
-      border-radius:12px; text-align:center; padding:12px 14px;
-      transition: transform .25s var(--ease), box-shadow .25s var(--ease); will-change: transform; perspective:600px;
-      box-shadow: 0 6px 18px var(--glow);
+      border:1px solid rgba(18,198,216,.42);
+      border-radius:14px; text-align:center; padding:14px 16px;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+      box-shadow: 0 6px 18px rgba(18,198,216,.22);
     }
     .time-box b{
       display:block; font-size: clamp(22px, 5.5vw, 28px);
-      font-variant-numeric: tabular-nums; color:#0f3a41; line-height:1.1; transform-style: preserve-3d;
+      font-variant-numeric: tabular-nums; color:#0f3a41; line-height:1.1;
     }
     .time-box span{
       display:block; font-size:12px; color:var(--primary-700); margin-top:6px;
@@ -207,76 +280,45 @@
     }
     .time-box.flip b{ animation: flip .6s var(--ease) both }
     @keyframes flip{
-      0%{ transform: rotateX(0) translateZ(0) }
-      45%{ transform: rotateX(-90deg) translateZ(1px); opacity:.85 }
-      55%{ transform: rotateX(90deg) translateZ(1px); opacity:.85 }
-      100%{ transform: rotateX(0) translateZ(0) }
+      0%{ transform: rotateX(0) } 45%{ transform: rotateX(-90deg); opacity:.85 }
+      55%{ transform: rotateX(90deg); opacity:.85 } 100%{ transform: rotateX(0) }
     }
-    @media (max-width: 520px){
-      .countdown{ grid-template-columns: repeat(2, minmax(120px,1fr)); gap: 12px; max-width: 380px }
-      .time-box{ padding:12px 14px }
-      .time-box b{ font-size: clamp(24px, 8vw, 32px) }
-      .time-box span{ font-size:11px; margin-top:6px }
+    @media (max-width:560px){
+      .countdown{ grid-template-columns: repeat(2, minmax(120px,1fr)); max-width:400px }
     }
 
-    /* Botones (turquesa+) */
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px; justify-content:center}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px; padding:12px 16px; border-radius:12px; font-weight:600;
-      border:1px solid color-mix(in oklab, var(--primary) 50%, #fff);
-      background: linear-gradient(180deg,#fff 0%, color-mix(in oklab, var(--accent) 70%, #fff) 100%);
-      color:#0f2f35; cursor:pointer; position:relative; transition: transform .2s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-      isolation:isolate;
+    /* ========= STICKY CTA (móvil) ========= */
+    .sticky-cta{
+      position:sticky; bottom:0; inset-inline:0; z-index:5;
+      background: linear-gradient(180deg, rgba(241,251,253,.0), rgba(241,251,253,.85));
+      backdrop-filter: blur(6px);
+      padding:12px 10px; display:none;
+      border-top:1px solid rgba(18,198,216,.22);
     }
-    .btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px var(--glow) }
-    .btn::after{
-      content:""; position:absolute; inset:-2px;
-      background: radial-gradient(120px 60px at var(--mx,50%) 120%, var(--glow), transparent 60%);
-      opacity:0; transition: opacity .25s var(--ease); z-index:-1; border-radius: inherit;
-    }
-    .btn:hover::after{ opacity:1 }
+    .sticky-cta .row{ display:flex; gap:10px; justify-content:center }
+    .sticky-cta .btn{ flex:1 1 0; text-align:center }
+    @media (max-width:780px){ .sticky-cta{ display:block } }
 
-    /* Lista eventos (línea sin gris) */
-    .event{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
-    .event:last-child{border-bottom:none}
-    .event .dot{width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--primary)}
-    .event h3{margin:0;font-size:18px;color:#0f3a41}
-    .event .meta{font-size:.95rem;color:var(--muted)}
+    /* ========= FOOTER ========= */
+    .footer{text-align:center;color:var(--muted);font-size:.95rem;padding:22px}
 
-    /* Galería */
-    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
-    @media (min-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}}
-    .gallery img{
-      border-radius:12px;aspect-ratio:1/1;object-fit:cover;
-      transition: transform .4s var(--ease), box-shadow .4s var(--ease), filter .3s var(--ease)
-    }
-    .gallery img:hover{ transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 24px color-mix(in oklab, var(--primary) 16%, transparent); filter: saturate(1.05) }
-    .chip{
-      display:inline-block; padding:6px 10px; border-radius:999px; font-size:.8rem; color:#0d2f35;
-      background: var(--accent-2); border:1px solid color-mix(in oklab, var(--primary) 30%, #fff);
-    }
-
-    /* Footer y sello */
-    .footer{text-align:center;color:var(--muted);font-size:.9rem;padding:22px}
-    .seal{
-      display:inline-flex;align-items:center;gap:8px;
-      background:linear-gradient(135deg,#fff 0%, color-mix(in oklab, var(--accent) 65%, #fff) 100%);
-      border:1px solid color-mix(in oklab, var(--accent) 70%, #fff);
-      padding:10px 14px;border-radius:12px;margin-top:8px;color:var(--seal-ink);
-      box-shadow: 0 6px 20px var(--glow);
-    }
-
-    /* Aparición y parallax */
+    /* ========= ANIMACIONES ACCESIBLES ========= */
     .fade{opacity:0; transform: translateY(12px); filter: blur(2px)}
     .fade.is-visible{ animation: fadeUp .6s var(--ease) both }
     @keyframes fadeUp{from{opacity:0;transform:translateY(12px);filter: blur(2px)}to{opacity:1;transform:none;filter: blur(0)}}
     .hero.parallax{ background-position: center calc(50% + var(--parallax,0px)) }
-
-    /* Accesibilidad: reduce motion */
     @media (prefers-reduced-motion: reduce){
-      *{animation: none !important; transition: none !important; scroll-behavior: auto !important}
+      *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
       .fade{opacity:1; transform:none; filter:none}
-      .hero.parallax{ background-position: center center !important }
+      .hero.parallax{ background-position:center center !important }
+    }
+
+    /* ========= PRINT ========= */
+    @media print{
+      body{background:#fff}
+      .card{box-shadow:none; border:none}
+      .hero::after,.sticky-cta{display:none !important}
+      .actions .btn{border:1px solid #000}
     }
   </style>
 </head>
@@ -286,12 +328,16 @@
 
       <!-- PORTADA -->
       <header class="hero parallax" role="banner" aria-label="Invitación de boda">
-        <div class="hero-content">
+        <div class="hero-card">
+          <div class="monogram" aria-hidden="true">J&M</div>
+
           <span class="badge">Estás cordialmente invitado(a) a nuestra boda.</span>
 
           <h1 class="names">
             José <span class="amp">&</span> Melissa
           </h1>
+
+          <div class="divider" aria-hidden="true"><i></i></div>
 
           <p class="date" aria-label="Fecha y hora del evento">
             Sábado, 14 de febrero de 2026 · 4:30 p. m.
@@ -300,26 +346,16 @@
           <!-- CONTADOR -->
           <div class="countdown" id="countdown" aria-live="polite" aria-label="Cuenta regresiva"></div>
 
-          <nav class="actions" aria-label="Acciones rápidas" style="margin-top:18px">
-            <!-- WhatsApp RSVP -->
-            <a class="btn" href="https://wa.me/50379144383?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20José%20y%20Melissa.%20Mi%20nombre%20es%3A" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">
-              ✅ Confirmar asistencia
-            </a>
-            <!-- Google Calendar (UTC: 16:30–22:00 hora local UTC-6) -->
-            <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20José%20y%20Melissa&dates=20260214T223000Z/20260215T040000Z&location=Lago%20de%20Coatepeque%2C%20Santa%20Ana%20Department%2C%20El%20Salvador&details=Ceremonia%20y%20recepción%20en%20el%20mismo%20lugar.%20Waze%3A%20https%3A%2F%2Fwaze.com%2Ful%2Fhd42r48sec" target="_blank" rel="noopener" aria-label="Agregar al calendario">
-              📅 Agregar al calendario
-            </a>
-            <!-- Waze -->
-            <a class="btn" href="https://waze.com/ul/hd42r48sec" target="_blank" rel="noopener" aria-label="Abrir ubicación en Waze">
-              🚗 Abrir en Waze
-            </a>
+          <!-- Acciones -->
+          <nav class="actions" aria-label="Acciones rápidas">
+            <a class="btn btn-primary" href="https://wa.me/50379144383?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20José%20y%20Melissa.%20Mi%20nombre%20es%3A" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">✅ Confirmar asistencia</a>
+            <a class="btn btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20José%20y%20Melissa&dates=20260214T223000Z/20260215T040000Z&location=Lago%20de%20Coatepeque%2C%20Santa%20Ana%20Department%2C%20El%20Salvador&details=Ceremonia%20y%20recepción%20en%20el%20mismo%20lugar.%20Waze%3A%20https%3A%2F%2Fwaze.com%2Ful%2Fhd42r48sec" target="_blank" rel="noopener" aria-label="Agregar al calendario">📅 Agregar al calendario</a>
+            <a class="btn btn-outline" href="https://waze.com/ul/hd42r48sec" target="_blank" rel="noopener" aria-label="Abrir ubicación en Waze">🚗 Abrir en Waze</a>
           </nav>
-
-          <div class="seal" aria-label="Verso bíblico"><b>Marcos 10:9</b> · Por tanto, lo que Dios ha unido, que no lo separe el hombre.</div>
         </div>
       </header>
 
-      <!-- ONDA BEACH -->
+      <!-- OLA -->
       <div class="wave" aria-hidden="true">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
           <path fill="var(--wave)" d="M0,64 C240,96 360,0 720,48 C1080,96 1200,24 1440,64 L1440,120 L0,120 Z"></path>
@@ -332,22 +368,35 @@
           <div class="panel fade">
             <div class="kicker">Detalles</div>
             <h2>Celebración</h2>
-
             <p class="muted">
               Con el corazón lleno de amor y gratitud, queremos compartir contigo el comienzo
               de una nueva etapa en nuestras vidas. Tu presencia hará este día aún más significativo.
             </p>
 
-            <article class="event" aria-label="Lugar del evento">
-              <div class="dot" aria-hidden="true"></div>
+            <!-- Timeline -->
+            <div class="event" aria-label="Ceremonia">
+              <div class="dot">⛪</div>
               <div>
-                <h3>Palo Alto Lakehouse</h3>
-                <p class="meta">Lago de Coatepeque</p>
-                <p class="muted" style="margin: 4px 0 0">Santa Ana, El Salvador</p>
+                <h3>Ceremonia</h3>
+                <p class="meta">4:30 p. m. — Palo Alto Lakehouse</p>
               </div>
-            </article>
+            </div>
+            <div class="event" aria-label="Recepción">
+              <div class="dot">🥂</div>
+              <div>
+                <h3>Recepción</h3>
+                <p class="meta">Al finalizar la ceremonia — Mismo lugar</p>
+              </div>
+            </div>
+            <div class="event" aria-label="Fiesta">
+              <div class="dot">🎶</div>
+              <div>
+                <h3>Fiesta</h3>
+                <p class="meta">Música en vivo y momentos inolvidables</p>
+              </div>
+            </div>
 
-            <p class="muted highlight" style="margin-top:8px">
+            <p class="muted highlight" style="margin-top:10px">
               Ceremonia y recepción se llevarán a cabo en el mismo lugar.
             </p>
           </div>
@@ -378,67 +427,55 @@
           <div class="container-inner" style="max-width:900px;margin:auto">
             <div class="kicker">Momentos</div>
             <h2>Nuestra historia de amor</h2>
-            <div class="gallery" role="list" aria-label="Galería de fotos">
-              <img src="/img/Foto1.jpeg" alt="José y Melissa, momento 1" loading="lazy" decoding="async" />
-              <img src="/img/Foto2.jpeg" alt="José y Melissa, momento 2" loading="lazy" decoding="async" />
-              <img src="/img/Foto3.jpeg" alt="José y Melissa, momento 3" loading="lazy" decoding="async" />
-              <img src="/img/Foto4.jpg"  alt="José y Melissa, momento 4" loading="lazy" decoding="async" />
-              <img src="/img/Foto5.jpg"  alt="José y Melissa, momento 5" loading="lazy" decoding="async" />
-              <img src="/img/Foto6.jpg"  alt="José y Melissa, momento 6" loading="lazy" decoding="async" />
+            <div class="gallery" role="list" aria-label="Galería de fotos" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px">
+              <img src="/img/Foto1.jpeg" alt="José y Melissa, momento 1" loading="lazy" decoding="async" style="border-radius:12px;aspect-ratio:1/1;object-fit:cover" />
+              <img src="/img/Foto2.jpeg" alt="José y Melissa, momento 2" loading="lazy" decoding="async" style="border-radius:12px;aspect-ratio:1/1;object-fit:cover" />
+              <img src="/img/Foto3.jpeg" alt="José y Melissa, momento 3" loading="lazy" decoding="async" style="border-radius:12px;aspect-ratio:1/1;object-fit:cover" />
+              <img src="/img/Foto4.jpg"  alt="José y Melissa, momento 4" loading="lazy" decoding="async" style="border-radius:12px;aspect-ratio:1/1;object-fit:cover" />
+              <img src="/img/Foto5.jpg"  alt="José y Melissa, momento 5" loading="lazy" decoding="async" style="border-radius:12px;aspect-ratio:1/1;object-fit:cover" />
+              <img src="/img/Foto6.jpg"  alt="José y Melissa, momento 6" loading="lazy" decoding="async" style="border-radius:12px;aspect-ratio:1/1;object-fit:cover" />
             </div>
           </div>
         </section>
       </main>
 
       <footer class="footer" role="contentinfo">
-        Con todo nuestro amor, José &amp; Melissa 💙 · <span id="year"></span>
+        Con todo nuestro amor, José & Melissa 💙 · <span id="year"></span>
       </footer>
     </div>
   </div>
 
   <script>
     // === FECHA DEL EVENTO ===
-    // año, mes-1, día, hora, minuto (mes empieza en 0)
-    const eventDate = new Date(2026, 1, 14, 16, 30); // 14 feb 2026, 4:30 p. m. (hora local)
-
+    const eventDate = new Date(2026, 1, 14, 16, 30); // 14 feb 2026, 4:30 p. m.
     const cd = document.getElementById('countdown');
     const pad = n => String(n).padStart(2,'0');
-
-    // Guarda valores previos para animar solo cuando cambian
     const prev = { d:null, h:null, m:null, s:null };
 
-    function timeBox(label, value, changed){
-      return `
-        <div class="time-box ${changed ? 'flip' : ''}">
-          <b aria-label="${value} ${label.toLowerCase()}">${pad(value)}</b>
-          <span>${label}</span>
-        </div>
-      `;
-    }
+    const timeBox = (label, value, changed) => `
+      <div class="time-box ${changed ? 'flip' : ''}">
+        <b aria-label="${value} ${label.toLowerCase()}">${pad(value)}</b>
+        <span>${label}</span>
+      </div>`;
 
     function renderCountdown(){
       const now = new Date();
       const diff = eventDate - now;
-
       if(diff <= 0){
         cd.innerHTML = '<div class="time-box"><b>¡Hoy!</b><span>Es el gran día</span></div>';
-        clearInterval(timer);
-        return;
+        clearInterval(timer); return;
       }
       const d = Math.floor(diff / (1000*60*60*24));
       const h = Math.floor((diff / (1000*60*60)) % 24);
       const m = Math.floor((diff / (1000*60)) % 60);
       const s = Math.floor((diff / 1000) % 60);
-
       const changed = { d: prev.d !== d, h: prev.h !== h, m: prev.m !== m, s: prev.s !== s };
-
       cd.innerHTML = `
         ${timeBox('Días', d, changed.d)}
         ${timeBox('Horas', h, changed.h)}
         ${timeBox('Min', m, changed.m)}
         ${timeBox('Seg', s, changed.s)}
       `;
-
       prev.d = d; prev.h = h; prev.m = m; prev.s = s;
     }
     renderCountdown();
@@ -447,7 +484,7 @@
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll reveal con respeto a reduce-motion
+    // Scroll reveal
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(!prefersReduced && 'IntersectionObserver' in window){
       const els = document.querySelectorAll('.fade');
@@ -463,12 +500,10 @@
       }, {threshold: 0.12});
       document.querySelectorAll('.fade').forEach(el => io.observe(el));
     } else {
-      document.querySelectorAll('.fade').forEach(el=>{
-        el.classList.add('is-visible');
-      });
+      document.querySelectorAll('.fade').forEach(el=> el.classList.add('is-visible'));
     }
 
-    // Parallax sutil
+    // Parallax sutil portada
     const hero = document.querySelector('.hero.parallax');
     if(hero && !prefersReduced){
       const onScroll = () => {
@@ -483,15 +518,6 @@
       onScroll();
       document.addEventListener('scroll', onScroll, {passive:true});
     }
-
-    // Halo hover
-    document.querySelectorAll('.btn').forEach(btn=>{
-      btn.addEventListener('pointermove', (e)=>{
-        const rect = btn.getBoundingClientRect();
-        const mx = e.clientX - rect.left;
-        btn.style.setProperty('--mx', mx + 'px');
-      });
-    });
   </script>
 </body>
 </html>
